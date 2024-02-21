@@ -12,6 +12,6 @@ about:
       href: https://substack.com/@swissstatsr
 ---
 
-SwissstatsR is the collaboration platform of the new R working group within [CORSTAT/KORSTAT](https://www.corstat.ch/en/). 
+**Swiss Stats R** is the collaboration platform of the new R working group within [CORSTAT/KORSTAT](https://www.corstat.ch/en/). 
 
 The group comprises coders and planners of 16 statistical offices (12 cantons, 4 citites) of Switzerland.
