@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Swiss Stats R"
+  site-url: https://swissstatsr.github.io/
+
+  page-footer:
+    right: "Developed with ❤️ in [St.Gallen](https://www.statistik.sg.ch) using [Quarto](https://quarto.org/) and [Zephyr](https://bootswatch.com/zephyr/) theme."
+    left: "&copy; CC-By Swiss Stats R"
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: https://SwissStatsR.substack.com/
+        text: Articles
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/SwissStatsR
+      - icon: rss
+        href: https://SwissStatsR.substack.com/
+format:
+  html:
+    page-layout: full
+    theme: [zephyr, custom.scss]
+    toc: true
+
+editor: visual
+
