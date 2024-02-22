@@ -12,6 +12,13 @@ about:
       href: https://substack.com/@swissstatsr
 ---
 
-**Swiss Stats R** is the collaboration platform of the new R working group within [CORSTAT/KORSTAT](https://www.corstat.ch/en/).
+SwissstatsR is the collaboration platform of the R working group within CORSTAT/KORSTAT, the Swiss Conference of regional statistical offices. The group comprises employees of 16 statistical offices of Switzerland. It was initiated by the Statistical Offices of Canton of St.Gallen and Canton of Zürich.
 
-The group comprises coders and planners of 16 statistical offices (12 cantons, 4 cities) of Switzerland.
+**Contact information:**
+
+Jan Wunder, Leiter Fachstelle für Statistik
+
+- [E-Mail](https://www.sg.ch/ueber-den-kanton-st-gallen/statistik/fachstelle-fuer-statistik/mitarbeitende-fachstelle-fuer-statistik.html)
+- [www.statistik.sg.ch](www.statistik.sg.ch)
+
+Kanton St.Gallen, Volkswirtschaftsdepartement, Fachstelle für Statistik, Davidstrasse 35, 9001 St.Gallen
