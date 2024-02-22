@@ -19,6 +19,6 @@ SwissstatsR is the collaboration platform of the R working group within CORSTAT/
 Jan Wunder, Leiter Fachstelle für Statistik
 
 - [E-Mail](https://www.sg.ch/ueber-den-kanton-st-gallen/statistik/fachstelle-fuer-statistik/mitarbeitende-fachstelle-fuer-statistik.html)
-- [www.statistik.sg.ch](https://www.statistik.sg.ch)
+- [www.statistik.sg.ch](https://www.sg.ch/ueber-den-kanton-st-gallen/statistik.html)
 
 Kanton St.Gallen, Volkswirtschaftsdepartement, Fachstelle für Statistik, Davidstrasse 35, 9001 St.Gallen
