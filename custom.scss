@@ -2,5 +2,7 @@
 // Base document colors
 $body-bg: white;
 $body-color: #181818;
-$link-color: #0039A6;
+$link-color: lighten(#0000EE, 20%);
+$link-hover-color: #C10000;
+$link-visited-color: lighten($link-color, 20%);
 $primary: #C10000;
