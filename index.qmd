@@ -25,22 +25,26 @@ descriptions <- stream_in(url('https://swissstatsr.r-universe.dev/stats/descript
 df_badges <- tibble(
   Package = descriptions$Package
 ) |>
-  mutate(badges = paste0("<a href='https://swissstatsr.r-universe.dev/", Package, "'><img src='https://swissstatsr.r-universe.dev/badges/", Package, "'></a>",
-                         "<br>",
-                         "<a href='https://CRAN.R-project.org/package=", Package, "'><img src='https://www.r-pkg.org/badges/version/", Package, "'></a>"))
+  mutate(badges = paste0("<a href='https://swissstatsr.r-universe.dev/", Package, "'><img src='https://swissstatsr.r-universe.dev/badges/", Package, "'></a>"
+                         # ,"<br>",
+                         # "<a href='https://CRAN.R-project.org/package=", Package, "'><img src='https://www.r-pkg.org/badges/version/", Package, "'></a>"
+                         )
+         )
 
 descriptions |>
-  select(Package, Title, RemoteUrl, `_maintainer`) |>
+  select(Package, Title, RemoteUrl, `_maintainer`, `_owner`) |>
+  arrange(`_owner`) |>
   mutate(Name = paste0('<a  target=_blank href=', RemoteUrl, '>', Package, '</a>')) |>
   mutate(Maintainer = `_maintainer`$name) |>
-  arrange(Package) |>
+  mutate(OwnerUrl = stringr::str_remove_all(RemoteUrl, pattern = Package)) |>
+  mutate(Owner = paste0('<a  target=_blank href=', OwnerUrl, '>', `_owner`, '</a>')) |>
   left_join(df_badges, by = "Package") |>
-  select(Name, Title, Maintainer, badges) |>
+  select(Name, Owner, Title, Maintainer, badges) |>
   DT::datatable(
     options = list(pageLength = 5, dom = 'ftip'),
     escape = FALSE,
     rownames = FALSE,
-    colnames = c("Name", "Description", "Maintainer", "Badges"),
+    colnames = c("Name", "Owner", "Description", "Maintainer", "R-Universe"),
     caption = htmltools::tags$caption(
       style = 'caption-side: bottom; text-align: right;',
       htmltools::HTML("<em>Data from the <a target=_blank href='https://swissstatsr.r-universe.dev/'>Swiss Stats R universe</a>.</em>")
