@@ -33,7 +33,7 @@ df_badges <- tibble(
 
 descriptions |>
   select(Package, Title, RemoteUrl, `_maintainer`, `_owner`) |>
-  arrange(`_owner`) |>
+  arrange(Package) |>
   mutate(Name = paste0('<a  target=_blank href=', RemoteUrl, '>', Package, '</a>')) |>
   mutate(Maintainer = `_maintainer`$name) |>
   mutate(OwnerUrl = stringr::str_remove_all(RemoteUrl, pattern = Package)) |>
