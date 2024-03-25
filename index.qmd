@@ -22,44 +22,25 @@ library(fontawesome)
 
 descriptions <- stream_in(url('https://swissstatsr.r-universe.dev/stats/descriptions'), verbose = FALSE)
 
-# Check if exists on CRAN
-# https://stackoverflow.com/a/60627969
-urls <- paste0("https://cran.r-project.org/package=", descriptions$Package)
-valid_url <- function(url_in,t=2){
-  con <- url(url_in)
-  check <- suppressWarnings(try(open.connection(con,open="rt",timeout=t),silent=T)[1])
-  suppressWarnings(try(close.connection(con),silent=T))
-  ifelse(is.null(check),TRUE,FALSE)
-}
-cran <- sapply(urls,valid_url)
-
-df_cran <- tibble(
-  Package = descriptions$Package,
-  is_cran = cran,
-  url = names(cran)
+df_badges <- tibble(
+  Package = descriptions$Package
 ) |>
-  mutate(cran_url = ifelse(is_cran, url, NA_character_)) |>
-  select(Package, is_cran, cran_url)
+  mutate(badges = paste0("<a href='https://swissstatsr.r-universe.dev/", Package, "'><img src='https://swissstatsr.r-universe.dev/badges/", Package, "'></a>",
+                         "<br>",
+                         "<a href='https://CRAN.R-project.org/package=", Package, "'><img src='https://www.r-pkg.org/badges/version/", Package, "'></a>"))
 
 descriptions |>
   select(Package, Title, RemoteUrl, `_maintainer`) |>
   mutate(Name = paste0('<a  target=_blank href=', RemoteUrl, '>', Package, '</a>')) |>
-  mutate(Email = paste0('<a  target=_blank href=mailto:', `_maintainer`$email, '>', fa("envelope"), '</a>')) |>
-  mutate(Maintainer = paste(`_maintainer`$name, Email)) |>
+  mutate(Maintainer = `_maintainer`$name) |>
   arrange(Package) |>
-  left_join(df_cran, by = "Package") |>
-  mutate(
-    Links = paste0(
-      ifelse(!is.na(RemoteUrl), ifelse(grepl("gitlab", RemoteUrl), paste0('<a  target=_blank href=', RemoteUrl, '>', fa("gitlab"), '</a>', ' '), paste0('<a  target=_blank href=', RemoteUrl, '>', fa("github"), '</a>', ' ')), ''),
-      ifelse(!is.na(cran_url), paste0('<a  target=_blank href=', cran_url, '>', fa("r-project"), '</a>'), "")
-    )
-  ) |>
-  select(Name, Title, Maintainer, Links) |>
+  left_join(df_badges, by = "Package") |>
+  select(Name, Title, Maintainer, badges) |>
   DT::datatable(
     options = list(pageLength = 5, dom = 'ftip'),
     escape = FALSE,
     rownames = FALSE,
-    colnames = c("Name", "Description", "Maintainer", "Links"),
+    colnames = c("Name", "Description", "Maintainer", "Badges"),
     caption = htmltools::tags$caption(
       style = 'caption-side: bottom; text-align: right;',
       htmltools::HTML("<em>Data from the <a target=_blank href='https://swissstatsr.r-universe.dev/'>Swiss Stats R universe</a>.</em>")
