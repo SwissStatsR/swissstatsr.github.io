@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Swiss Stats R",
     "section": "",
-    "text": "Open source R projects made in Switzerland."
+    "text": "Open source R packages made in Switzerland."
   },
   {
     "objectID": "index.html#projects",
@@ -19,5 +19,75 @@
     "title": "Swiss Stats R",
     "section": "Projects",
     "text": "Projects\n\n\n\n\n\n\n\n\nSubscribe to receive our last articles by email:"
+  },
+  {
+    "objectID": "collaboration.html",
+    "href": "collaboration.html",
+    "title": "Collaboration workflow",
+    "section": "",
+    "text": "This document presents the phases of the SwissStatsR collaboration workflow."
+  },
+  {
+    "objectID": "collaboration.html#local-code",
+    "href": "collaboration.html#local-code",
+    "title": "Collaboration workflow",
+    "section": "1. Local Code",
+    "text": "1. Local Code\nAny R script of a member of SwissStatsR can be submitted to SwissStatsR. Our only requirements is that the R code should be related to Swiss Statistics."
+  },
+  {
+    "objectID": "collaboration.html#github-private",
+    "href": "collaboration.html#github-private",
+    "title": "Collaboration workflow",
+    "section": "2. GitHub Private",
+    "text": "2. GitHub Private\n\nOnce your submission is accepted, peer reviewing starts with SwissStatsR members.\nYou should have an account on GitHub.\nHosting on our SwissStatsR GitHub is recommended but not mandatory."
+  },
+  {
+    "objectID": "collaboration.html#github-public",
+    "href": "collaboration.html#github-public",
+    "title": "Collaboration workflow",
+    "section": "3. GitHub Public",
+    "text": "3. GitHub Public\n\nSwissStatsR public release of R code is only possible as an open-source R package.\nThe R package can be hosted on any GitHub repository, including SwissStatsR GitHub, or another DevOps public provider1.\nThe R package should have an GitHub Action R-CMD-Check badge:\n\nusethis::use_github_action()\n\nThe R package should have an open source license such as MIT, GPL or LGPL:\n\nfor example: usethis::use_gpl3_license()"
+  },
+  {
+    "objectID": "collaboration.html#r-universe",
+    "href": "collaboration.html#r-universe",
+    "title": "Collaboration workflow",
+    "section": "4. R-Universe",
+    "text": "4. R-Universe\n\nThe open source R package should pass R-CMD-Check.\nIt should also be well documented.\nUnit tests are recommended but not mandatory.\nAdding a SwissStatsR badge is optional."
+  },
+  {
+    "objectID": "collaboration.html#swissstatsr.org",
+    "href": "collaboration.html#swissstatsr.org",
+    "title": "Collaboration workflow",
+    "section": "5. SwissStatsR.org",
+    "text": "5. SwissStatsR.org\n\nOnce the R package hits the SwissStatsR Universe, it will be added on SwissStatsR.org."
+  },
+  {
+    "objectID": "collaboration.html#your-code",
+    "href": "collaboration.html#your-code",
+    "title": "Collaboration workflow",
+    "section": "1. Your Code",
+    "text": "1. Your Code\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be related to Swiss Statistics.\nMake a submission using the form or by email."
+  },
+  {
+    "objectID": "collaboration.html#code-submission",
+    "href": "collaboration.html#code-submission",
+    "title": "Collaboration workflow",
+    "section": "1. Code Submission",
+    "text": "1. Code Submission\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be related to Swiss Statistics."
+  },
+  {
+    "objectID": "collaboration.html#promotion-optional",
+    "href": "collaboration.html#promotion-optional",
+    "title": "Collaboration workflow",
+    "section": "6. Promotion (optional)",
+    "text": "6. Promotion (optional)\n\nYou can write an article about your R package on our blog.\nSubscribe to our blog here.\n\nContact information can be found in the About section.\n\nClick here to make a submission"
+  },
+  {
+    "objectID": "collaboration.html#footnotes",
+    "href": "collaboration.html#footnotes",
+    "title": "Collaboration workflow",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe use of GitHub is recommended to ease collaboration and leverage R-CMD-Check GitHub Actions.↩︎"
   }
 ]

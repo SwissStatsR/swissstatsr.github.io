@@ -18,6 +18,8 @@ website:
         text: Home
       - href: https://SwissStatsR.substack.com/
         text: Articles
+      - href: collaboration.qmd
+        text: Submission
       - href: about.qmd
         text: About
     right:

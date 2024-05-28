@@ -5,7 +5,7 @@ toc: false
 
 <p class="lead">
 
-Open source R projects made in Switzerland.
+Open source R packages made in Switzerland.
 
 </p>
 
@@ -25,10 +25,11 @@ descriptions <- stream_in(url('https://swissstatsr.r-universe.dev/stats/descript
 df_badges <- tibble(
   Package = descriptions$Package
 ) |>
-  mutate(badges = paste0("<a href='https://swissstatsr.r-universe.dev/", Package, "'><img src='https://swissstatsr.r-universe.dev/badges/", Package, "'></a>"
-                         # ,"<br>",
-                         # "<a href='https://CRAN.R-project.org/package=", Package, "'><img src='https://www.r-pkg.org/badges/version/", Package, "'></a>"
-                         )
+  # mutate(badges = paste0("<a href='https://swissstatsr.r-universe.dev/", Package, "'><img src='https://swissstatsr.r-universe.dev/badges/", Package, "'></a>"
+  #                        # ,"<br>",
+  #                        # "<a href='https://CRAN.R-project.org/package=", Package, "'><img src='https://www.r-pkg.org/badges/version/", Package, "'></a>"
+  #                        ),
+   mutate(badges = paste0("<a href='https://swissstatsr.r-universe.dev/", Package, "'><img src='https://swissstatsr.r-universe.dev/badges/", Package, "'><br><a href='", descriptions$`_upstream`, "/actions/workflows/R-CMD-check.yaml'><img src='", descriptions$`_upstream`, "/actions/workflows/R-CMD-check.yaml/badge.svg'></a><br></a><a href='https://CRAN.R-project.org/package=", Package, "'><img src='https://www.r-pkg.org/badges/version/", Package, "'></a>")
          )
 
 descriptions |>
@@ -44,7 +45,7 @@ descriptions |>
     options = list(pageLength = 5, dom = 'ftip'),
     escape = FALSE,
     rownames = FALSE,
-    colnames = c("Name", "Description", "Maintainer", "R-Universe"),
+    colnames = c("Name", "Description", "Maintainer", "Badges"),
     caption = htmltools::tags$caption(
       style = 'caption-side: bottom; text-align: right;',
       htmltools::HTML("<em>Data from the <a target=_blank href='https://swissstatsr.r-universe.dev/'>Swiss Stats R universe</a>.</em>")
