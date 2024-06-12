@@ -28,11 +28,11 @@
     "text": "This document presents the phases of the SwissStatsR collaboration workflow."
   },
   {
-    "objectID": "collaboration.html#local-code",
-    "href": "collaboration.html#local-code",
+    "objectID": "collaboration.html#your-code",
+    "href": "collaboration.html#your-code",
     "title": "Collaboration workflow",
-    "section": "1. Local Code",
-    "text": "1. Local Code\nAny R script of a member of SwissStatsR can be submitted to SwissStatsR. Our only requirements is that the R code should be related to Swiss Statistics."
+    "section": "1. Your Code",
+    "text": "1. Your Code\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be related to Swiss Statistics.\nMake a submission using the form or by email."
   },
   {
     "objectID": "collaboration.html#github-private",
@@ -61,20 +61,6 @@
     "title": "Collaboration workflow",
     "section": "5. SwissStatsR.org",
     "text": "5. SwissStatsR.org\n\nOnce the R package hits the SwissStatsR Universe, it will be added on SwissStatsR.org."
-  },
-  {
-    "objectID": "collaboration.html#your-code",
-    "href": "collaboration.html#your-code",
-    "title": "Collaboration workflow",
-    "section": "1. Your Code",
-    "text": "1. Your Code\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be related to Swiss Statistics.\nMake a submission using the form or by email."
-  },
-  {
-    "objectID": "collaboration.html#code-submission",
-    "href": "collaboration.html#code-submission",
-    "title": "Collaboration workflow",
-    "section": "1. Code Submission",
-    "text": "1. Code Submission\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be related to Swiss Statistics."
   },
   {
     "objectID": "collaboration.html#promotion-optional",
