@@ -5,11 +5,12 @@ toc: false
 
 <p class="lead">
 
-Open source R packages made in Switzerland.
+Open source software made in Switzerland.
 
 </p>
 
-## Projects
+::: panel-tabset
+## R packages
 
 ```{r}
 #| echo: false
@@ -53,7 +54,47 @@ descriptions |>
   )
 ```
 
-<hr class="my-4">
+:::
+
+<!-- ## Python libraries -->
+
+<!-- ```{python} -->
+<!-- #| echo: false -->
+<!-- #| warning: false -->
+
+<!-- import importlib.metadata -->
+<!-- from IPython.display import Markdown -->
+<!-- from tabulate import tabulate -->
+
+<!-- # List of libraries to extract metadata from -->
+<!-- libraries = ['shiny', 'great_tables', 'polars'] -->
+
+<!-- # Function to get metadata for a library -->
+<!-- def get_library_metadata(library_name): -->
+<!--     try: -->
+<!--         dist = importlib.metadata.distribution(library_name) -->
+<!--         name = dist.metadata.get('Name', library_name) -->
+<!--         version = dist.version -->
+<!--         description = dist.metadata.get('Summary', 'No description available') -->
+<!--         return { -->
+<!--             'Library': name, -->
+<!--             'Description': description, -->
+<!--             'Version': version -->
+<!--         } -->
+<!--     except importlib.metadata.PackageNotFoundError: -->
+<!--         return { -->
+<!--             'Library': library_name, -->
+<!--             'Description': 'Package not found', -->
+<!--             'Version': 'N/A' -->
+<!--         } -->
+
+<!-- # Fetch metadata for each library and store it in a list -->
+<!-- metadata_list = [get_library_metadata(lib) for lib in libraries] -->
+
+<!-- # Render table using tabulate with Markdown format -->
+<!-- Markdown(tabulate(metadata_list, headers="keys", tablefmt="github")) -->
+<!-- ``` -->
+<!-- ::: -->
 
 <b>Subscribe to receive our last articles by email:</b>
 
