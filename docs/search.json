@@ -21,46 +21,25 @@
     "text": "This document presents the phases of the SwissStatsR collaboration workflow."
   },
   {
-    "objectID": "collaboration.html#your-code",
-    "href": "collaboration.html#your-code",
+    "objectID": "collaboration.html#the-phases-of-a-submission",
+    "href": "collaboration.html#the-phases-of-a-submission",
     "title": "Collaboration workflow",
-    "section": "1. Your Code",
-    "text": "1. Your Code\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be related to Swiss Statistics.\nMake a submission using the form or by email."
+    "section": "The phases of a submission",
+    "text": "The phases of a submission\n\nClick here to make a submission\n\n1. Your Code\n\nAny R script can be submitted to SwissStatsR.\nOur only requirement is to be open source and related to Swiss Statistics.\nMake a submission using the form or by email.\n\n\n\n2. GitHub Private\n\nOnce your submission is accepted, peer reviewing starts with SwissStatsR members.\nYou should have an account on GitHub.\nHosting on our SwissStatsR GitHub is recommended but not mandatory.\n\n\n\n3. GitHub Public\n\nR packages and R projects (see next sections) can be hosted on any GitHub repository, including SwissStatsR GitHub, or another DevOps public provider1.\nThey should have an GitHub Action R-CMD-Check badge:\n\nusethis::use_github_action()\n\nThey should have an open source license such as MIT, GPL or LGPL:\n\nfor example: usethis::use_gpl3_license()\n\n\n\n\n4. R-Universe\n\nOpen source R package or R project should pass R-CMD-Check.\nThey should be well documented.\nUnit tests are recommended but not mandatory.\nAdding a SwissStatsR badge is optional.\n\n\n\n5. SwissStatsR.org\n\nOnce the R package or R project hit the SwissStatsR Universe, it will be added on SwissStatsR.org.\n\n\n\n6. Promotion (optional)\n\nYou can write an article about your project on our blog.\nSubscribe to our blog here.\n\nContact information can be found in the About section.\nClick here to make a submission"
   },
   {
-    "objectID": "collaboration.html#github-private",
-    "href": "collaboration.html#github-private",
+    "objectID": "collaboration.html#submit-an-r-package",
+    "href": "collaboration.html#submit-an-r-package",
     "title": "Collaboration workflow",
-    "section": "2. GitHub Private",
-    "text": "2. GitHub Private\n\nOnce your submission is accepted, peer reviewing starts with SwissStatsR members.\nYou should have an account on GitHub.\nHosting on our SwissStatsR GitHub is recommended but not mandatory."
+    "section": "Submit an R package",
+    "text": "Submit an R package\nYour R package should follow best practices. See “R package (2e)” free online book.\nThe R package should have an open source license such as MIT, GPL or LGPL:\n\nusethis::use_gpl3_license(), usethis::use_mit_license(), etc.\n\nThe R package should have an GitHub Action R-CMD-Check badge:\n\nusethis::use_github_action()\n\nSwissStatsR hosts only R projects passing all R-CMD-Checks."
   },
   {
-    "objectID": "collaboration.html#github-public",
-    "href": "collaboration.html#github-public",
+    "objectID": "collaboration.html#submit-an-r-project",
+    "href": "collaboration.html#submit-an-r-project",
     "title": "Collaboration workflow",
-    "section": "3. GitHub Public",
-    "text": "3. GitHub Public\n\nSwissStatsR public release of R code is only possible as an open-source R package.\nThe R package can be hosted on any GitHub repository, including SwissStatsR GitHub, or another DevOps public provider1.\nThe R package should have an GitHub Action R-CMD-Check badge:\n\nusethis::use_github_action()\n\nThe R package should have an open source license such as MIT, GPL or LGPL:\n\nfor example: usethis::use_gpl3_license()"
-  },
-  {
-    "objectID": "collaboration.html#r-universe",
-    "href": "collaboration.html#r-universe",
-    "title": "Collaboration workflow",
-    "section": "4. R-Universe",
-    "text": "4. R-Universe\n\nThe open source R package should pass R-CMD-Check.\nIt should also be well documented.\nUnit tests are recommended but not mandatory.\nAdding a SwissStatsR badge is optional."
-  },
-  {
-    "objectID": "collaboration.html#swissstatsr.org",
-    "href": "collaboration.html#swissstatsr.org",
-    "title": "Collaboration workflow",
-    "section": "5. SwissStatsR.org",
-    "text": "5. SwissStatsR.org\n\nOnce the R package hits the SwissStatsR Universe, it will be added on SwissStatsR.org."
-  },
-  {
-    "objectID": "collaboration.html#promotion-optional",
-    "href": "collaboration.html#promotion-optional",
-    "title": "Collaboration workflow",
-    "section": "6. Promotion (optional)",
-    "text": "6. Promotion (optional)\n\nYou can write an article about your R package on our blog.\nSubscribe to our blog here.\n\nContact information can be found in the About section.\n\nClick here to make a submission"
+    "section": "Submit an R project",
+    "text": "Submit an R project\nIf you have R scripts related to Swiss statistics which could be useful to the R community, you can submit an GitHub repository containing R scripts.\nThe following GitHub repository is an example of an SwissStatsR project:\n\nhttps://github.com/SwissStatsR/submit\n\n\nDESCRIPTION file\nYour repository should contains metadata about your project in a DESCRIPTION file. Even if your project is not an R package, this file helps us standardize metadata collection among all SwissStatsR projects, such as contacts and licensing.\nYou can create the DESCRIPTION file with:\nusethis::use_description()\nThen you should fill DESCRIPTION file. You can use utility functions as helpers, such as:\n\nadd authors: usethis::use_author()\nadd license: usethis::use_gpl3_license(), usethis::use_mit_license(), etc.\n\nWe ask you to also add R package dependencies of your R project. As a helper, you can use usethis::use_package().\n\n\n/R folder\nWe strongly recommend to have all the R function in the /R folder, following R package guidelines. Some reasons are:\n\nWith devtools::load_all(), it is really easy to setup the environment.\nEveryone knows where to find the functions.\nThis folder structure is the standard for R packages, but also for other projects such as golem (R shiny) and targets.\n\n\n\n/tests folder\nAll tests should be in the /tests folder. More information about tests can be found (here)[https://r-pkgs.org/testing-basics.html].\n\n\nOther files\nOther R scripts and files can be added to the /inst and /scripts folders.\nIf for some reasons the R projects cannot follow an R package structure, all the other files and folders should be listed in the .Rbuildignore file. For this you can use:\nusethis::use_build_ignore()\nIf you R project contains R functions and tests, we recommend you to add them in the “R” and “tests” folder and follow R package guidelines.\n\n\n.gitignore file\nYou can avoid sharing specific files and folder using the .gitignore file, in particular sensitive files.\nPlease note as you are the only responsible of the data shared on GitHub.\n\n\nrenv\nWe strongly recommend you to use renv to track the dependencies of your R project with snapshots. Snapshots should be done using the most R version possible.\nrenv::init()\nYou can choose to add a specific badge in the README showing your R project is fully reproducible using renv.\n\n\nChecks\nEven if your R project is not an R package, we ask you to add GitHub Actions R-CMD-Check to check if your DESCRIPTIONS and .Rbuildignore files are correctly filled. For this, please use usethis::use_github_action(name = \"check-standard\")\nYou can locally check your R project R-CMD-Check results with: devtools::check().\nSwissStatsR hosts only R projects passing all R-CMD-Checks.\n\nClick here to make a submission"
   },
   {
     "objectID": "collaboration.html#footnotes",

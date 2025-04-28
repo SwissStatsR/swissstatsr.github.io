@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.7.6">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Swiss Stats R - Collaboration workflow</title>
+<title>Collaboration workflow – Swiss Stats R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -35,17 +69,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6c21014d9765ba549c6ebad95917e4d7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-89b183c3a529172634020bf8710592ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,6 +94,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -74,51 +115,51 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Swiss Stats R</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://SwissStatsR.substack.com/" rel="" target="">
- <span class="menu-text">Articles</span></a>
+    <a class="nav-link" href="https://SwissStatsR.substack.com/"> 
+<span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./collaboration.html" rel="" target="" aria-current="page">
- <span class="menu-text">Submission</span></a>
+    <a class="nav-link active" href="./collaboration.html" aria-current="page"> 
+<span class="menu-text">Submission</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/SwissStatsR" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/SwissStatsR"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://SwissStatsR.substack.com/" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="https://SwissStatsR.substack.com/"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -131,12 +172,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#your-code" id="toc-your-code" class="nav-link active" data-scroll-target="#your-code">1. Your Code</a></li>
-  <li><a href="#github-private" id="toc-github-private" class="nav-link" data-scroll-target="#github-private">2. GitHub Private</a></li>
-  <li><a href="#github-public" id="toc-github-public" class="nav-link" data-scroll-target="#github-public">3. GitHub Public</a></li>
-  <li><a href="#r-universe" id="toc-r-universe" class="nav-link" data-scroll-target="#r-universe">4. R-Universe</a></li>
-  <li><a href="#swissstatsr.org" id="toc-swissstatsr.org" class="nav-link" data-scroll-target="#swissstatsr.org">5. SwissStatsR.org</a></li>
-  <li><a href="#promotion-optional" id="toc-promotion-optional" class="nav-link" data-scroll-target="#promotion-optional">6. Promotion (optional)</a></li>
+  <li><a href="#the-phases-of-a-submission" id="toc-the-phases-of-a-submission" class="nav-link active" data-scroll-target="#the-phases-of-a-submission">The phases of a submission</a></li>
+  <li><a href="#submit-an-r-package" id="toc-submit-an-r-package" class="nav-link" data-scroll-target="#submit-an-r-package">Submit an R package</a></li>
+  <li><a href="#submit-an-r-project" id="toc-submit-an-r-project" class="nav-link" data-scroll-target="#submit-an-r-project">Submit an R project</a>
+  <ul class="collapse">
+  <li><a href="#description-file" id="toc-description-file" class="nav-link" data-scroll-target="#description-file"><code>DESCRIPTION</code> file</a></li>
+  <li><a href="#r-folder" id="toc-r-folder" class="nav-link" data-scroll-target="#r-folder"><code>/R</code> folder</a></li>
+  <li><a href="#tests-folder" id="toc-tests-folder" class="nav-link" data-scroll-target="#tests-folder"><code>/tests</code> folder</a></li>
+  <li><a href="#other-files" id="toc-other-files" class="nav-link" data-scroll-target="#other-files">Other files</a></li>
+  <li><a href="#gitignore-file" id="toc-gitignore-file" class="nav-link" data-scroll-target="#gitignore-file"><code>.gitignore</code> file</a></li>
+  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv">renv</a></li>
+  <li><a href="#checks" id="toc-checks" class="nav-link" data-scroll-target="#checks">Checks</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -150,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -158,71 +205,144 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
+
 <p>This document presents the phases of the SwissStatsR collaboration workflow.</p>
+<section id="the-phases-of-a-submission" class="level2">
+<h2 class="anchored" data-anchor-id="the-phases-of-a-submission">The phases of a submission</h2>
 <p><img src="images/collaboration-workflow.png" class="img-fluid"></p>
-<div class="vertical-center">
-<p><a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form" class="btn btn-outline-primary btn" role="button">Click here to make a submission</a></p>
-</div>
-<section id="your-code" class="level2">
-<h2 class="anchored" data-anchor-id="your-code">1. Your Code</h2>
+<p><a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form">Click here to make a submission</a></p>
+<section id="your-code" class="level4">
+<h4 class="anchored" data-anchor-id="your-code">1. Your Code</h4>
 <ul>
 <li>Any R script can be submitted to SwissStatsR.</li>
-<li>Our only requirement is to be related to Swiss Statistics.</li>
+<li>Our only requirement is to be open source and related to Swiss Statistics.</li>
 <li>Make a submission using the <a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form">form</a> or by <a href="https://swissstatsr.org/about.html">email</a>.</li>
 </ul>
 </section>
-<section id="github-private" class="level2">
-<h2 class="anchored" data-anchor-id="github-private">2. GitHub Private</h2>
+<section id="github-private" class="level4">
+<h4 class="anchored" data-anchor-id="github-private">2. GitHub Private</h4>
 <ul>
 <li>Once <a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form">your submission</a> is accepted, peer reviewing starts with SwissStatsR members.</li>
 <li>You should have an account on <a href="https://github.com/">GitHub</a>.</li>
 <li>Hosting on our <a href="https://github.com/SwissStatsR">SwissStatsR GitHub</a> is recommended but not mandatory.</li>
 </ul>
 </section>
-<section id="github-public" class="level2">
-<h2 class="anchored" data-anchor-id="github-public">3. GitHub Public</h2>
+<section id="github-public" class="level4">
+<h4 class="anchored" data-anchor-id="github-public">3. GitHub Public</h4>
 <ul>
-<li>SwissStatsR public release of R code is only possible as an open-source <a href="https://r-pkgs.org/">R package</a>.</li>
-<li>The R package can be hosted on any GitHub repository, including <a href="https://github.com/SwissStatsR">SwissStatsR GitHub</a>, or another DevOps public provider<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
-<li>The R package should have an GitHub Action <a href="https://r-pkgs.org/R-CMD-check.html">R-CMD-Check</a> badge:
+<li>R packages and R projects (see next sections) can be hosted on any GitHub repository, including <a href="https://github.com/SwissStatsR">SwissStatsR GitHub</a>, or another DevOps public provider<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
+<li>They should have an GitHub Action <a href="https://r-pkgs.org/R-CMD-check.html">R-CMD-Check</a> badge:
 <ul>
 <li><a href="https://usethis.r-lib.org/reference/github_actions.html"><code>usethis::use_github_action()</code></a></li>
 </ul></li>
-<li>The R package should have an <a href="https://r-pkgs.org/license.html">open source license</a> such as MIT, GPL or LGPL:
+<li>They should have an <a href="https://r-pkgs.org/license.html">open source license</a> such as MIT, GPL or LGPL:
 <ul>
 <li>for example: <a href="https://usethis.r-lib.org/reference/licenses.html"><code>usethis::use_gpl3_license()</code></a></li>
 </ul></li>
 </ul>
 </section>
-<section id="r-universe" class="level2">
-<h2 class="anchored" data-anchor-id="r-universe">4. R-Universe</h2>
+<section id="r-universe" class="level4">
+<h4 class="anchored" data-anchor-id="r-universe">4. R-Universe</h4>
 <ul>
-<li>The open source R package should pass <a href="https://r-pkgs.org/R-CMD-check.html">R-CMD-Check</a>.</li>
-<li>It should also be <a href="https://r-pkgs.org/man.html">well documented</a>.</li>
+<li>Open source R package or R project should pass <a href="https://r-pkgs.org/R-CMD-check.html">R-CMD-Check</a>.</li>
+<li>They should be <a href="https://r-pkgs.org/man.html">well documented</a>.</li>
 <li><a href="https://r-pkgs.org/testing-basics.html">Unit tests</a> are recommended but not mandatory.</li>
 <li>Adding a <a href="https://swissstatsr.r-universe.dev/badges">SwissStatsR badge</a> is optional.</li>
 </ul>
 </section>
-<section id="swissstatsr.org" class="level2">
-<h2 class="anchored" data-anchor-id="swissstatsr.org">5. SwissStatsR.org</h2>
+<section id="swissstatsr.org" class="level4">
+<h4 class="anchored" data-anchor-id="swissstatsr.org">5. SwissStatsR.org</h4>
 <ul>
-<li>Once the R package hits the <a href="https://swissstatsr.r-universe.dev/">SwissStatsR Universe</a>, it will be added on <a href="https://swissstatsr.org/">SwissStatsR.org</a>.</li>
+<li>Once the R package or R project hit the <a href="https://swissstatsr.r-universe.dev/">SwissStatsR Universe</a>, it will be added on <a href="https://swissstatsr.org/">SwissStatsR.org</a>.</li>
 </ul>
 </section>
-<section id="promotion-optional" class="level2">
-<h2 class="anchored" data-anchor-id="promotion-optional">6. Promotion (optional)</h2>
+<section id="promotion-optional" class="level4">
+<h4 class="anchored" data-anchor-id="promotion-optional">6. Promotion (optional)</h4>
 <ul>
-<li>You can write an article about your R package on <a href="https://swissstatsr.substack.com/">our blog</a>.</li>
+<li>You can write an article about your project on <a href="https://swissstatsr.substack.com/">our blog</a>.</li>
 <li>Subscribe to our blog <a href="https://swissstatsr.substack.com/">here</a>.</li>
 </ul>
 <p>Contact information can be found in the <a href="https://swissstatsr.org/about.html">About</a> section.</p>
+<p><a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form">Click here to make a submission</a></p>
+</section>
+</section>
+<section id="submit-an-r-package" class="level2">
+<h2 class="anchored" data-anchor-id="submit-an-r-package">Submit an R package</h2>
+<p>Your R package should follow best practices. See “<a href="https://r-pkgs.org/">R package (2e)</a>” free online book.</p>
+<p>The R package should have an open source license such as MIT, GPL or LGPL:</p>
+<ul>
+<li><code>usethis::use_gpl3_license()</code>, <code>usethis::use_mit_license()</code>, etc.</li>
+</ul>
+<p>The R package should have an GitHub Action R-CMD-Check badge:</p>
+<ul>
+<li><code>usethis::use_github_action()</code></li>
+</ul>
+<p>SwissStatsR hosts only R projects passing all R-CMD-Checks.</p>
+</section>
+<section id="submit-an-r-project" class="level2">
+<h2 class="anchored" data-anchor-id="submit-an-r-project">Submit an R project</h2>
+<p>If you have R scripts related to Swiss statistics which could be useful to the R community, you can submit an GitHub repository containing R scripts.</p>
+<p>The following GitHub repository is an example of an SwissStatsR project:</p>
+<ul>
+<li>https://github.com/SwissStatsR/submit</li>
+</ul>
+<section id="description-file" class="level3">
+<h3 class="anchored" data-anchor-id="description-file"><code>DESCRIPTION</code> file</h3>
+<p>Your repository should contains metadata about your project in a <a href="https://r-pkgs.org/description.html">DESCRIPTION</a> file. Even if your project is not an R package, this file helps us standardize metadata collection among all SwissStatsR projects, such as contacts and licensing.</p>
+<p>You can create the <code>DESCRIPTION</code> file with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_description</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then you should fill <code>DESCRIPTION</code> file. You can use utility functions as helpers, such as:</p>
+<ul>
+<li>add authors: <code>usethis::use_author()</code></li>
+<li>add license: <code>usethis::use_gpl3_license()</code>, <code>usethis::use_mit_license()</code>, etc.</li>
+</ul>
+<p>We ask you to also add R package dependencies of your R project. As a helper, you can use <code>usethis::use_package()</code>.</p>
+</section>
+<section id="r-folder" class="level3">
+<h3 class="anchored" data-anchor-id="r-folder"><code>/R</code> folder</h3>
+<p>We strongly recommend to have all the R function in the <code>/R</code> folder, following <a href="https://r-pkgs.org/code.html">R package guidelines</a>. Some reasons are:</p>
+<ul>
+<li>With <code>devtools::load_all()</code>, it is really easy to setup the environment.</li>
+<li>Everyone knows where to find the functions.</li>
+<li>This folder structure is the standard for R packages, but also for other projects such as <code>golem</code> (R shiny) and <code>targets</code>.</li>
+</ul>
+</section>
+<section id="tests-folder" class="level3">
+<h3 class="anchored" data-anchor-id="tests-folder"><code>/tests</code> folder</h3>
+<p>All tests should be in the <code>/tests</code> folder. More information about tests can be found (here)[https://r-pkgs.org/testing-basics.html].</p>
+</section>
+<section id="other-files" class="level3">
+<h3 class="anchored" data-anchor-id="other-files">Other files</h3>
+<p>Other R scripts and files can be added to the <code>/inst</code> and <code>/scripts</code> folders.</p>
+<p>If for some reasons the R projects cannot follow an R package structure, all the other files and folders should be listed in the <code>.Rbuildignore</code> file. For this you can use:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_build_ignore</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you R project contains R functions and tests, we recommend you to add them in the “R” and “tests” folder and follow <a href="https://r-pkgs.org/code.html">R package guidelines</a>.</p>
+</section>
+<section id="gitignore-file" class="level3">
+<h3 class="anchored" data-anchor-id="gitignore-file"><code>.gitignore</code> file</h3>
+<p>You can avoid sharing specific files and folder using the <code>.gitignore</code> file, in particular sensitive files.</p>
+<p>Please note as you are the only responsible of the data shared on GitHub.</p>
+</section>
+<section id="renv" class="level3">
+<h3 class="anchored" data-anchor-id="renv">renv</h3>
+<p>We strongly recommend you to use <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> to track the dependencies of your R project with snapshots. Snapshots should be done using the most R version possible.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can choose to add a specific badge in the README showing your R project is fully reproducible using <code>renv</code>.</p>
+</section>
+<section id="checks" class="level3">
+<h3 class="anchored" data-anchor-id="checks">Checks</h3>
+<p>Even if your R project is not an R package, we ask you to add GitHub Actions R-CMD-Check to check if your <code>DESCRIPTIONS</code> and <code>.Rbuildignore</code> files are correctly filled. For this, please use <code>usethis::use_github_action(name = "check-standard")</code></p>
+<p>You can locally check your R project R-CMD-Check results with: <code>devtools::check()</code>.</p>
+<p>SwissStatsR hosts only R projects passing all R-CMD-Checks.</p>
 <div class="vertical-center">
-<p><a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form" class="btn btn-outline-primary btn" role="button">Click here to make a submission</a></p>
+<p><a href="https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form" class="btn btn-outline-primary" role="button">Click here to make a submission</a></p>
 </div>
 
 
+</section>
 </section>
 
 
@@ -267,18 +387,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -310,11 +419,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/swissstatsr\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -324,8 +470,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -337,7 +492,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -381,6 +658,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -406,6 +684,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -468,13 +772,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© CC-By Swiss Stats R</div>   
+    <div class="nav-footer-left">
+<p>© CC-By Swiss Stats R</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">Developed with ❤️ in <a href="https://www.statistik.sg.ch">St.Gallen</a> using <a href="https://quarto.org/">Quarto</a> and <a href="https://bootswatch.com/zephyr/">Zephyr</a> theme.</div>
+    <div class="nav-footer-right">
+<p>Developed with ❤️ in <a href="https://www.statistik.sg.ch">St.Gallen</a> using <a href="https://quarto.org/">Quarto</a> and <a href="https://bootswatch.com/zephyr/">Zephyr</a> theme.</p>
+</div>
   </div>
 </footer>
+
 
 
 
