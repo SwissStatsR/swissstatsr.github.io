@@ -20,7 +20,9 @@ This document presents the phases of the SwissStatsR collaboration workflow.
 
 ![](images/collaboration-workflow.png)
 
-[Click here to make a submission](https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form)
+::: {.vertical-center}
+[Click here to make a submission](https://airtable.com/appTkja7O6oOv6zZ8/pagrVmrt4pUqqKLX6/form){.btn .btn-outline-primary .btn role="button"} 
+:::
 
 #### 1. Your Code
 
